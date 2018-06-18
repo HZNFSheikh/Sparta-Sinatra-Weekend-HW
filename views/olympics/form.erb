@@ -1,0 +1,18 @@
+<form action="/<%= @olympics.id %>" method="POST">
+  <div>
+    <label>Host City</label>
+    <input type="text" name="host_city" placeholder="Enter a host city" value="<%= @olympics.host_city %>">
+  </div>
+
+  <div>
+    <label>Olympic Year</label>
+    <textarea name="body"><%= @olympics.olympic_year %></textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Save Olympics">
+  </div>
+  <% if(@post.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
