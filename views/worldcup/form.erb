@@ -1,0 +1,18 @@
+<form action="/<%= @pworldcup.id %>" method="POST">
+  <div>
+    <label>Host Country</label>
+    <input type="text" name="host" placeholder="Enter a host country" value="<%= @worldcup.host %>">
+  </div>
+
+  <div>
+    <label>Year</label>
+    <textarea name="body"><%= @worldcup.year %></textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Save WorldCup">
+  </div>
+  <% if(@worldcup.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
