@@ -1,9 +1,14 @@
 
-<h1>Welcome to the homepage</h1>
+<h1>History of the FIFA World Cup</h1>
 
-<% @posts.each do |post| %>
+<% @worldcups.each do |worldcup| %>
 <div>
-  <h3><a href="/<%= post.id %>"><%= post.title %></a></h3>
-  <p><%= post.body %></p>
+  <h3><a href="/worldcup/<%= worldcup.id %>"><%= worldcup.host %></a></h3>
+  <h4><%= worldcup.year %></h4>
 </div>
+
+<div>
+  <img src="/Users/tech-a46/Desktop/Core/ServerSide/RubyFramework/Sparta-Sinatra-Weekend-HW/2018-fifa-world-cup-logo.gif">
+</div>
+
 <% end %>

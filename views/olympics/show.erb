@@ -1,8 +1,8 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
-<a href="/<%= @post.id %>/edit">edit</a>
+<h1><%= @olympic.host_city %></h1>
+<p><%= @olympic.olympic_year %></p>
+<a href="/olympics/<%= @olympic.id %>/edit">Edit</a>
 
-<form action="/<%= @post.id %>" method="post">
+<form action="/olympics/<%= @olympic.id %>" method="post">
   <input type="submit" value="Delete">
   <input type="hidden" name="_method" value="DELETE">
 </form>

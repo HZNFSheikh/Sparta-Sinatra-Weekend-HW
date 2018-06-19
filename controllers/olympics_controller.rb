@@ -14,8 +14,6 @@ end
     #Index
     get '/olympics' do
 
-      @title2 = "Olympic Games History"
-
       @olympics = Olympics.all
 
       erb :'olympics/index'
@@ -25,7 +23,7 @@ end
     #New
     get '/olympics/new' do
 
-      @olympics = Olympics.new
+      @olympic = Olympics.new
 
       erb :'olympics/new'
 
@@ -38,7 +36,7 @@ end
       id = params[:id].to_i            #changing contents of array into integer
 
 
-      @olympics = Olympics.find id     #able to select single record by id
+      @olympic = Olympics.find id     #able to select single record by id
 
       erb :'olympics/show'
 
@@ -91,7 +89,7 @@ end
 
       id = params[:id].to_i
 
-      @olympics = Olympics.find id
+      @olympic = Olympics.find id
 
       erb :'olympics/edit'
 

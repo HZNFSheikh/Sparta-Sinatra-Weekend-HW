@@ -1,8 +1,9 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
-<a href="/<%= @post.id %>/edit">edit</a>
+<h1><%= @worldcup.host %></h1>
+<p><%= @worldcup.year %></p>
+<p><%= @worldcup.winner %></p>
+<a href="/worldcup/<%= @worldcup.id %>/edit">Edit</a>
 
-<form action="/<%= @post.id %>" method="post">
+<form action="/worldcup/<%= @worldcup.id %>" method="post">
   <input type="submit" value="Delete">
   <input type="hidden" name="_method" value="DELETE">
 </form>

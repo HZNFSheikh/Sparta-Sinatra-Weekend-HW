@@ -5,7 +5,7 @@ class Olympics
     # Open the connection to the DB
     def self.open_connection
 
-      conn = PG.connect( dbname: 'blog' )
+      conn = PG.connect( dbname: 'sport' )
 
     end
 
@@ -27,6 +27,8 @@ class Olympics
         self.hydrate tuple
       end
 
+      olympics
+
     end
 
     # Find one using the ID that'll give it when we call it
@@ -35,7 +37,7 @@ class Olympics
       conn = self.open_connection
 
       # SQL to find using the ID
-      sql = "SELECT * FROM post WHERE id=#{ id } LIMIT 1"
+      sql = "SELECT * FROM olympics WHERE id=#{ id } LIMIT 1"
 
       # Get the raw results
       olympics = conn.exec(sql)
@@ -50,7 +52,7 @@ class Olympics
 
     def save
 
-      conn = Post.open_connection
+      conn = Olympics.open_connection
 
       # If the object that the save method is run on does NOT have an existing ID, create a new instance
       if (!self.id)
@@ -73,15 +75,15 @@ class Olympics
     end
 
     # The data we get back from the DB isn't particularly clean, so we need to create a method to clean it up before we send it to the Controller
-    def self.hydrate olympics_data
+    def self.hydrate olympic_data
 
       # Create a new instance of Post
-      olympics = Olympics.new
+      olympic = Olympics.new
 
       # Assign the id, title and body properties to those that come back from the DB
-      olympics.id = olympics_data['id']
-      olympics.host_city = olympics_data['host_city']
-      olympics.olympic_year = olympics_data['olympic_year']
+      olympic.id = olympic_data['id']
+      olympic.host_city = olympic_data['host_city']
+      olympic.olympic_year = olympic_data['olympic_year']
 
       # Return the post
       olympic

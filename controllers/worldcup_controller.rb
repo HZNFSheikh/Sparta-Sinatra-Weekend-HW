@@ -14,9 +14,7 @@ end
     #Index
     get '/worldcup' do
 
-      @title = "World Cup History"
-
-      @worldcup = WorldCup.all
+      @worldcups = WorldCup.all
 
       erb :'worldcup/index'
 
@@ -55,7 +53,7 @@ end
 
         worldcup.save
 
-        redirect '/'
+        redirect '/worldcup'
 
 
     end

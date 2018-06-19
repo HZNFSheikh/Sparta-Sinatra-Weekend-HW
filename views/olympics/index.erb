@@ -1,9 +1,9 @@
 
-<h1>Welcome to the homepage</h1>
+<h1>History of the Olympic Games</h1>
 
-<% @posts.each do |post| %>
+<% @olympics.each do |olympic| %>
 <div>
-  <h3><a href="/<%= post.id %>"><%= post.title %></a></h3>
-  <p><%= post.body %></p>
+  <h3><a href="/olympics/<%= @olympic.id %>"><%= olympic.host_city %></a></h3>
+  <p><%= olympic.olympic_year %></p>
 </div>
 <% end %>

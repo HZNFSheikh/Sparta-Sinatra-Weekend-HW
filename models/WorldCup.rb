@@ -5,7 +5,7 @@ class WorldCup
     # Open the connection to the DB
     def self.open_connection
 
-      conn = PG.connect( dbname: 'blog' )
+      conn = PG.connect( dbname: 'sport' )
 
     end
 
@@ -16,7 +16,7 @@ class WorldCup
       conn = self.open_connection
 
       # Creating a SQL string
-      sql = "SELECT * FROM post ORDER BY id"
+      sql = "SELECT * FROM worldcup ORDER BY id"
 
       # Execute the connection with our SQL string, storing it in a variable
       # 'Dirty array'
@@ -26,6 +26,8 @@ class WorldCup
       worldcups = results.map do |tuple|
         self.hydrate tuple
       end
+
+      worldcups
 
     end
 
@@ -50,7 +52,7 @@ class WorldCup
 
     def save
 
-      conn = Post.open_connection
+      conn = WorldCup.open_connection
 
       # If the object that the save method is run on does NOT have an existing ID, create a new instance
       if (!self.id)

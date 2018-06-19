@@ -1,12 +1,17 @@
-<form action="/<%= @pworldcup.id %>" method="POST">
+<form action="/worldcup/<%= @worldcup.id %>" method="POST">
   <div>
     <label>Host Country</label>
     <input type="text" name="host" placeholder="Enter a host country" value="<%= @worldcup.host %>">
   </div>
 
   <div>
-    <label>Year</label>
-    <textarea name="body"><%= @worldcup.year %></textarea>
+    <label>Tournament Year</label>
+    <input type="text" name="year" placeholder="Enter a year" value="<%= @worldcup.year %>">
+  </div>
+
+  <div>
+    <label>Tournament Winner</label>
+    <input type="text" name="winner" placeholder="Enter a winner" value="<%= @worldcup.winner %>">
   </div>
 
   <div>
